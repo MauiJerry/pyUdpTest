@@ -4,6 +4,7 @@ import sys
 receiveIP = "10.10.10.10"
 udpPort = 5005
 bufferSize = 1024
+udpAddress = (receiveIP,udpPort)
 
 #msgFromServer = "Hello UDP Client"
 #bytesToSend = str.encode(msgFromServer)
@@ -12,9 +13,9 @@ bufferSize = 1024
 UDPServerSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 # Bind to address and ip
-UDPServerSocket.bind((receiveIP, udpPort))
+UDPServerSocket.bind(udpAddress)
 
-print("UDP server up and listening")
+print("UDP server up and listening", udpAddress )
 
 # Listen for incoming datagrams
 while (True):
