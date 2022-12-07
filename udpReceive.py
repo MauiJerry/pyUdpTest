@@ -23,12 +23,8 @@ while (True):
         bytesAddressPair = UDPServerSocket.recvfrom(bufferSize)
         message = bytesAddressPair[0]
         address = bytesAddressPair[1]
+        print(f"Message from Client({address}):{message}")
 
-        clientMsg = "Message from Client:{}".format(message)
-        clientIP = "Client IP Address:{}".format(address)
-
-        print(clientMsg)
-        print(clientIP)
     except KeyboardInterrupt:
         print("keyboard interrupt! exiting")
         sys.exit()
